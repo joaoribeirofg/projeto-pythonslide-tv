@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos Recepção 1200x800</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+            background-color: black;
+            overflow: hidden;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    {% for imagem in imagens %}
+    <img class="slides" src="{{ url_for('static', filename=imagem) }}" alt="Imagem de Slideshow">
+    {% endfor %}
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides');
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.style.display = 'none';
+        });
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 10000);
+    }
+
+    showSlides();
+</script>
+
+</body>
+</html>
