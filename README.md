@@ -1,2 +1,1 @@
-Desenvolvi um sistema de exibição automatizada de slides para a recepção da empresa, utilizando Python. A solução reduziu em mais de 70% o tempo gasto pelos funcionários na organização manual das imagens, garantindo uma melhor organização interna e uma apresentação visual mais profissional. Além disso, a automação permitiu a categorização das imagens por área, aprimorando a experiência dos visitantes e a comunicação interna.
 
